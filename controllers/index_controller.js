@@ -7,12 +7,13 @@ module.exports.index = (req, res) => {
 
   client.messages
     .create({
-      body:
-        "Hello! This is an editable text message. You are free to change it and write whatever you like.",
+      body: "Hey from a dumb bot",
       from: "whatsapp:+14155238886",
-      to: "whatsapp:" + process.env.WHATSAPP_PHONE_NUMBER
+      to: "whatsapp:" + process.env.WHATSAPP_PHONE_NUMBER,
+      mediaUrl: "http://techslides.com/demos/sample-videos/small.mp4"
     })
     .then(message => console.log(message.sid))
+    .catch(err => console.log(err))
     .done();
   // return res.status(200).json({ message: "" });
 };
