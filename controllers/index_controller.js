@@ -10,7 +10,7 @@ module.exports.index = (req, res) => {
       body:
         "Hello! This is an editable text message. You are free to change it and write whatever you like.",
       from: "whatsapp:+14155238886",
-      to: "whatsapp:+918791431819"
+      to: "whatsapp:" + process.env.WHATSAPP_PHONE_NUMBER
     })
     .then(message => console.log(message.sid))
     .done();

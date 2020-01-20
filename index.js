@@ -20,7 +20,7 @@ app.use(bodyParser.json());
 const User = require("./models/User");
 
 // Routes
-app.use("/", require("./routes/index"));
+app.use("/api/v1", require("./routes/index"));
 
 app.get("*", (req, res) => {
   res.send({ message: "endpoint not found" });
